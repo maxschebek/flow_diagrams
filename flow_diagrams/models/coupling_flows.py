@@ -5,9 +5,7 @@ from flow_diagrams.utils.weights import normal_init, init_weights
 from flow_diagrams.utils.jax import key_chain
 from flow_diagrams.models.coupling_layers import (
     ConditionalCouplingLayerNPT,
-    CouplingLayerNVT,
     ConditionalCircularShiftLayerNPT,
-    CircularShiftLayerNVT,
 )
 
 

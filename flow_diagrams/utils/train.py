@@ -63,7 +63,7 @@ def log_weights_given_latent(
     flow_press = temp_and_pressure_flow[1]
 
     new_pos, new_scale, ldj = flow.forward(
-        pos=pos_prior, scale=scale_prior, temp=flow_temp, perss=flow_press
+        pos=pos_prior, scale=scale_prior, temp=flow_temp, press=flow_press
     )
     new_box = new_scale * reference_box
     new_vol = jnp.prod(new_box)

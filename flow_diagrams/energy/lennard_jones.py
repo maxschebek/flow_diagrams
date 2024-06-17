@@ -24,7 +24,7 @@ NeighborList = partition.NeighborList
 NeighborListFormat = partition.NeighborListFormat
 
 
-def my_multiplicative_isotropic_cutoff(
+def fd_multiplicative_isotropic_cutoff(
     fn: Callable[..., Array],
     r_onset: float,
     r_cutoff: float,
@@ -98,7 +98,7 @@ def my_multiplicative_isotropic_cutoff(
     return cutoff_fn
 
 
-def my_lennard_jones_neighbor_list(
+def fd_lennard_jones_neighbor_list(
     displacement_or_metric: DisplacementOrMetricFn,
     box_size: Box,
     species: Optional[Array] = None,
@@ -141,7 +141,7 @@ def my_lennard_jones_neighbor_list(
         func = lennard_jones
 
     energy_fn = smap.pair_neighbor_list(
-        my_multiplicative_isotropic_cutoff(func, r_onset, r_cutoff, smooth, shift),
+        fd_multiplicative_isotropic_cutoff(func, r_onset, r_cutoff, smooth, shift),
         space.canonicalize_displacement_or_metric(displacement_or_metric),
         ignore_unused_parameters=True,
         species=species,
@@ -153,7 +153,7 @@ def my_lennard_jones_neighbor_list(
     return neighbor_fn, energy_fn
 
 
-def my_lennard_jones_pair(
+def fd_lennard_jones_pair(
     displacement_or_metric: DisplacementOrMetricFn,
     species: Optional[Array] = None,
     sigma: Array = 1.0,
@@ -180,7 +180,7 @@ def my_lennard_jones_pair(
         func = lennard_jones
 
     return smap.pair(
-        my_multiplicative_isotropic_cutoff(func, r_onset, r_cutoff, smooth, shift),
+        fd_multiplicative_isotropic_cutoff(func, r_onset, r_cutoff, smooth, shift),
         space.canonicalize_displacement_or_metric(displacement_or_metric),
         ignore_unused_parameters=True,
         species=species,
