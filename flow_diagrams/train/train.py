@@ -1,11 +1,10 @@
 from jax import numpy as jnp
-from openmm import unit
 import jax
 import equinox as eqx
 import numpy as np
 from flow_diagrams.utils.jax import key_chain
 
-kB = unit.MOLAR_GAS_CONSTANT_R.value_in_unit(unit.kilojoule_per_mole / unit.kelvin)
+kB = 0.00831446261815324 # in(unit.kilojoule_per_mole / unit.kelvin)
 
 
 def sample_loss(

@@ -1,9 +1,9 @@
 import numpy as np
 import jax
 import jax.numpy as jnp
-from openmm import unit
+# from openmm import unit
 
-kB = unit.MOLAR_GAS_CONSTANT_R.value_in_unit(unit.kilojoule_per_mole / unit.kelvin)
+kB = 0.00831446261815324 # in(unit.kilojoule_per_mole / unit.kelvin)
 
 
 def running_average(data: np.ndarray, tau: int = 0):

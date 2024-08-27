@@ -13,5 +13,8 @@ setup(
    'numpy==1.25.2',
    'mdtraj==1.10.0',
    'scipy==1.9.3',
+   'ipykernel',
+   'distrax==0.1.2',
+   'tensorflow-probability==0.23.0'
 ]
 )
