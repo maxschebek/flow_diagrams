@@ -1,4 +1,30 @@
-build/*
-dist/*
-*.egg-info/
+# Byte-compiled / optimized / DLL files
 __pycache__/
+*.pyc
+*.pyo
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Virtual environments
+venv/
+.env/
+
+# Logs and coverage reports
+*.log
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+nosetests.xml
+test-results/
+.tox/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
