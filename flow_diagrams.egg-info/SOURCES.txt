@@ -1,5 +1,0 @@
-setup.py
-flow_diagrams.egg-info/PKG-INFO
-flow_diagrams.egg-info/SOURCES.txt
-flow_diagrams.egg-info/dependency_links.txt
-flow_diagrams.egg-info/top_level.txt
